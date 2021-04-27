@@ -15,14 +15,14 @@ const News = () => {
 
     return (
         <div>
-            {newsData.map((article)=>(
-                <div className={styles.container}>
+            {newsData.map((article, idx)=>(
+                <div key={idx}  className={styles.container}>
                     <Grid item xs={12} md={12} component={Card} className={styles.card}>
                         <CardContent>
-                            <Typography color="textSecondary" gutterBottom ><a href={article.name}><p>{article.title}</p></a></Typography>
-                            <Typography color="textSecondary"><p>{article.publishedAt}</p></Typography>
-                            <Typography variant="body2" component="p"><p>{article.description}</p></Typography>
-                            <Typography variant="body2" component="p"><p>{article.content}</p></Typography>
+                            <Typography color="textSecondary" gutterBottom ><a href={article.name}>{article.title}</a></Typography>
+                            <Typography color="textSecondary">{article.publishedAt}</Typography>
+                            <Typography variant="body2" component="p">{article.description}</Typography>
+                            <Typography variant="body1" component="p">{article.content}</Typography>
                         </CardContent>
                     </Grid>
                 </div>

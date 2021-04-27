@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const url = 'https://covid19.mathdro.id/api';
-const newsAPI_KEY = 'YOUR-API-KEY-FROM-NEWS-API'
+const newsAPI_KEY = 'e3dec6d864d94279a9bb4d74e5cdac68'
 const newsUrl =`https://newsapi.org/v2/everything?q=covid-19&apiKey=${newsAPI_KEY}`;
 
 export const fetchData = async (country) => {
@@ -50,7 +50,10 @@ export const fetchNewsApiData = async () => {
         //que devuelve la API
         //Destructuramos sobre una Destructuracion - HERMOSO
         const {data: {articles}} = await axios.get(changeableUrl);
-        const modifiedNewsData = articles.map((article)=>({
+        
+        const splicedNewsData = articles.splice(18);
+
+        const modifiedNewsData = splicedNewsData.map((article)=>({
             name: article.source.name,
             title: article.title,
             description: article.description,
@@ -58,6 +61,7 @@ export const fetchNewsApiData = async () => {
             publishedAt: article.publishedAt
         }));
         
+
         return modifiedNewsData;
     } catch (error) {
         return error;
