@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+    max-width: 95%;
+}
+
+.card {
+    background: rgb(250, 250, 250);
+    max-width: 345;
+    box-shadow: "0 5px 8px 0 rgba(0, 0, 0, 0.3)";
+    background-color: "#fafafa";
+    height: 600;
+    margin: 0 1.5% !important;
+    border-bottom: 10px solid rgba(255, 0, 0, 0.5)
+}
